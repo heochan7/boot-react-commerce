@@ -1,11 +1,13 @@
 package com.example.commerce_spring_api.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor
 @Table(name="users")
+@Getter
+@NoArgsConstructor
 public class User extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
