@@ -1,14 +1,17 @@
-package com.example.commerce_spring_api.entity;
+package com.example.commerce_spring_api.entity.user;
 
+import com.example.commerce_spring_api.entity.user.enums.Role;
+import com.example.commerce_spring_api.entity.base.BaseEntity;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="users")
 @Getter
-@NoArgsConstructor
-public class User extends BaseEntity{
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,4 +26,6 @@ public class User extends BaseEntity{
     private String name;
 
     private String phone;
+
+    private Role role = Role.USER;
 }

@@ -1,13 +1,16 @@
-package com.example.commerce_spring_api.entity;
+package com.example.commerce_spring_api.entity.user;
 
+import com.example.commerce_spring_api.entity.base.BaseEntity;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor
+@Table (name = "addresses")
 @Getter
-public class Address extends BaseEntity{
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Address extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

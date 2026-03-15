@@ -1,4 +1,4 @@
-package com.example.commerce_spring_api.entity;
+package com.example.commerce_spring_api.entity.base;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
