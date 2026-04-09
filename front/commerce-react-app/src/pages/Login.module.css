@@ -1,0 +1,145 @@
+/* src/pages/Login.module.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  /* 화면 전체를 가로세로 꽉 채우고 중앙 정렬 */
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f6f5f7;
+  font-family: 'Inter', sans-serif;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  /* 배경은 아주 연한 아이보리/베이지 느낌으로 따뜻하게 */
+  background: #FFFFFF;
+  border-radius: 12px;
+  /* 부드러운 갈색 톤의 그림자 */
+  box-shadow: 0 10px 30px rgba(67, 56, 44, 0.08), 0 20px 48px rgba(67, 56, 44, 0.05);
+
+  width: 90%;
+  max-width: 450px;
+  padding: 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.title {
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  /* 깊은 밤색(Dark Brown) */
+  color: #43382C;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-weight: 600;
+  font-size: 14px;
+  /* 부드러운 갈색 회색 */
+  color: #78716C;
+}
+
+.errorMessage {
+  font-size: 13px;
+  /* 일반 라벨보다 약간 작게 */
+  color: #B91C1C;
+  /* 신뢰감을 주는 딥 레드 (브라운과 잘 어울림) */
+  font-weight: 500;
+  margin-top: -2px;
+  /* 인풋창 바로 아래에 붙도록 살짝 조절 */
+  padding-left: 2px;
+
+  /* 애니메이션 효과 (스르륵 나타나게) */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.loginInput {
+  width: 100%;
+  height: 50px;
+  border: 1.5px solid #E7E5E4;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  color: #43382C;
+  transition: all 0.2s ease-in-out;
+  /* 입력창 배경색을 아주 연한 베이지 톤으로 */
+  background-color: #FAFAF9;
+}
+
+/* 포커스 되었을 때 브라운 포인트 적용 */
+.loginInput:focus {
+  outline: none;
+  border-color: #78350F;
+  /* 진한 브라운(Amber/Brown) */
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(120, 53, 15, 0.1);
+}
+
+/* 버튼 스타일 - 메인 브라운 컬러 적용 */
+.loginBtn {
+  width: 100%;
+  height: 52px;
+  margin-top: 10px;
+  /* 클래식한 초콜릿 브라운 */
+  background-color: #78350F;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(120, 53, 15, 0.2);
+  transition: all 0.2s ease;
+}
+
+.loginBtn:hover {
+  background-color: #451A03;
+  /* 호버 시 더 깊은 브라운 */
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(120, 53, 15, 0.3);
+}
+
+.loginBtn:active {
+  transform: translateY(0);
+}
+
+.joinLink {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #78716C;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.joinLink:hover {
+  color: #78350F;
+  text-decoration: underline;
+}

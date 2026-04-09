@@ -16,16 +16,24 @@ public class User extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
+    private String username;
+
     @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String name;
-
     private String phone;
 
+    @Enumerated(EnumType.STRING)
     private Role role = Role.USER;
+
+    public User(Long id, String username, String email, Role role) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.role = role;
+    }
 }

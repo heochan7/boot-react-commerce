@@ -1,0 +1,140 @@
+/* Join.module.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  /* 화면 전체를 가로세로 꽉 채우고 중앙 정렬 */
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f6f5f7;
+  font-family: 'Inter', sans-serif;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(67, 56, 44, 0.06);
+
+  width: 90%;
+  max-width: 400px; /* 전체 폭 축소 (480px -> 400px) */
+  padding: 28px 32px; /* 상하좌우 여백 축소 */
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px; /* 요소 간격 축소 (18px -> 14px) */
+}
+
+.title {
+  margin-bottom: 6px;
+  text-align: center;
+  font-size: 1.5rem; /* 제목 크기 축소 (1.8rem -> 1.5rem) */
+  font-weight: 800;
+  color: #43382C;
+}
+
+/* 이름 & 휴대전화 가로 배치 */
+.row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-weight: 600;
+  font-size: 13px; /* 폰트 크기 미세 축소 */
+  color: #78716C;
+}
+
+.optional {
+  font-size: 11px;
+  font-weight: 400;
+  color: #A8A29E;
+  margin-left: 2px;
+}
+
+input {
+  width: 100%;
+  height: 40px; /* 높이 축소 (48px -> 40px) */
+  border: 1.5px solid #E7E5E4;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #43382C;
+  transition: all 0.2s ease-in-out;
+  background-color: #FAFAF9;
+}
+
+input:focus {
+  outline: none;
+  border-color: #78350F;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(120, 53, 15, 0.08);
+}
+
+.joinBtn {
+  width: 100%;
+  height: 46px; /* 버튼 높이 축소 (52px -> 46px) */
+  margin-top: 6px;
+  background-color: #78350F;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(120, 53, 15, 0.15);
+  transition: all 0.2s ease;
+}
+
+.joinBtn:hover {
+  background-color: #451A03;
+  transform: translateY(-1px);
+}
+
+.loginLink {
+  margin-top: 4px;
+  text-align: center;
+  font-size: 13px;
+  color: #78716C;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.loginLink:hover {
+  color: #78350F;
+  text-decoration: underline;
+}
+
+/* 반응형: 아주 작은 화면 대응 */
+@media (max-width: 380px) {
+  .row {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .container {
+    padding: 24px 20px;
+  }
+}
