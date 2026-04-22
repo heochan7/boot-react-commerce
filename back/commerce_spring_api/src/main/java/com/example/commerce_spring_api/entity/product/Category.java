@@ -16,15 +16,15 @@ import java.util.List;
 public class Category extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // pk id
 
     @Column(nullable = false)
-    private String name;
+    private String name; // category 이름
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
-    private Category parent;
+    private Category parent; // 상위 id ex) 상의에 대한 카테고리면 상의 id 값 참조
 
     @OneToMany(mappedBy = "parent")
-    private List<Category> children = new ArrayList<>();
+    private List<Category> children = new ArrayList<>(); // 하위 category 값 참조
 }

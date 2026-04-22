@@ -1,16 +1,17 @@
 package com.example.commerce_spring_api.entity.user;
 
 import com.example.commerce_spring_api.entity.base.BaseEntity;
+import com.example.commerce_spring_api.entity.user.enums.StoreStatus;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table (name = "addresses")
+@Table(name = "stores")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Address extends BaseEntity {
+public class Store extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,15 +21,10 @@ public class Address extends BaseEntity {
     private User user; // user 참조
 
     @Column(nullable = false)
-    private String recipientName; // 수령인 이름
+    private String businessName; // 상표명
 
     @Column(nullable = false)
-    private String zipCode; // 우편 번호
+    private String business_number; // 사업자 번호
 
-    @Column(nullable = false)
-    private String baseAddress; // 주소
-
-    private String detailAddress; // 상세 주소
-
-    private Boolean isDefault = false; // 배송지 여부
+    private StoreStatus status = StoreStatus.PENDING;
 }

@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import styles from "./Join.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { authApi } from "../../api/authApi";
 
 function Join() {
   const navigate = useNavigate();
+  
 
   const [username, setUsername] = useState("");
   const [phone, setPhone] = useState("");
@@ -26,15 +28,17 @@ function Join() {
     }
 
     try {
-      await register({ email, password, username });
-      toast.success("환영합니다!");
-    } catch (err: any) {
-      if (err.response?.status === 409) { // 409: Conflict (이미 존재하는 데이터)
-        toast.error("이미 사용 중인 이메일입니다.");
-      } else {
-        toast.error("회원가입 중 오류가 발생했습니다.");
-      }
+    const res = await authApi.join({ username, phone, email, password });
+    
+    if (res.success) {
+        toast.success("환영합니다!");
+        navigate("/login");
+    } else {
+        toast.error(res.message || "회원가입에 실패했습니다.");
     }
+} catch (err) {
+    toast.error("시스템 오류가 발생했습니다.");
+}
   };
 
   return (

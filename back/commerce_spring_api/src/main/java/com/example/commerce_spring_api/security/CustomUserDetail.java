@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+// user detail 값에 맞게 재정의
 public class CustomUserDetail implements UserDetails {
     private User user;
 

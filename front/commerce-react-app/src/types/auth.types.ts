@@ -21,3 +21,9 @@ export interface JoinResponse{
   success : boolean,
   message? : string
 }
+
+// id, createdAt, updatedAt, businessName, business_number, status, user_id
+export interface StoreJoinRequest extends JoinRequest{
+  businessName: string,
+  business_number: string,
+}

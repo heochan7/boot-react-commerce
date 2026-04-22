@@ -1,0 +1,124 @@
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f5f7;
+  font-family: 'Inter', sans-serif;
+  padding: 20px; /* 모바일 여유분 */
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(67, 56, 44, 0.06);
+  width: 100%;
+  max-width: 440px; /* 가로 배치를 위해 기존보다 약간 넓힘 */
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* 간격 축소 */
+}
+
+.title {
+  margin-bottom: 4px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #43382C;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-weight: 600;
+  font-size: 12px;
+  color: #78716C;
+}
+
+.optional {
+  font-size: 11px;
+  font-weight: 400;
+  color: #A8A29E;
+}
+
+input {
+  width: 100%;
+  height: 38px; /* 높이 최적화 */
+  border: 1.5px solid #E7E5E4;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #43382C;
+  background-color: #FAFAF9;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #78350F;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(120, 53, 15, 0.08);
+}
+
+.joinBtn {
+  width: 100%;
+  height: 44px;
+  margin-top: 8px;
+  background-color: #78350F;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.joinBtn:hover {
+  background-color: #451A03;
+}
+
+.loginLink {
+  margin-top: 4px;
+  text-align: center;
+  font-size: 13px;
+  color: #78716C;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.loginLink:hover {
+  color: #78350F;
+  text-decoration: underline;
+}
+
+/* 반응형: 화면이 좁아지면 가로 배치를 세로로 전환 */
+@media (max-width: 400px) {
+  .row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .container {
+    padding: 20px;
+  }
+}

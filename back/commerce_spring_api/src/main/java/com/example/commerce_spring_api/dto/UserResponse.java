@@ -7,14 +7,14 @@ import lombok.Getter;
 @Getter
 public class UserResponse {
     private Long id;
-    private String name;
+    private String username;
     private String email;
-    private Role role;
+    private String role;
 
     public UserResponse(User user) {
         this.id = user.getId();
-        this.name = user.getUsername();
+        this.username = user.getUsername();
         this.email = user.getEmail();
-        this.role = user.getRole();
+        this.role = user.getRole().name();
     }
 }

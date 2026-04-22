@@ -1,7 +1,7 @@
 package com.example.commerce_spring_api.entity.product;
 
 import com.example.commerce_spring_api.entity.product.enums.ProductStatus;
-import com.example.commerce_spring_api.entity.user.Seller;
+import com.example.commerce_spring_api.entity.user.Store;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +17,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "seller_id", nullable = false)
-    private Seller seller;
+    private Store seller;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)

@@ -16,19 +16,12 @@ function Login() {
   const submitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // 에러 초기화 및 입력값 검증 (보안 및 사용자 경험)
-    setError("");
-    if (!email || !password) {
-      setError("이메일과 비밀번호를 모두 입력해주세요.");
-      return;
-    }
-
     try {
       await login({ email, password });
       toast.success("로그인 성공!");
       navigate("/"); // 오타 수정
     } catch (err) {
-      toast.error("이메일 혹은 비밀번호를 입력해주세요.");   
+      toast.error("이메일 혹은 비밀번호를 확인해주세요.");   
      }
   };
 
@@ -65,9 +58,13 @@ function Login() {
           {error && <p className={styles.errorText}>{error}</p>}
 
           <button className={styles.loginBtn} type="submit">login</button>
-          <Link to="/join" className={styles.joinLink}>
-            회원가입을 하셨나요?
+          <Link to="/user/join" className={styles.joinLink}>
+            회원가입
           </Link>
+          <Link to="/seller/join" className={styles.joinLink}>
+            사업자 회원가입
+          </Link>
+          
         </div>
       </form>
     </div>

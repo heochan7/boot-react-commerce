@@ -13,9 +13,16 @@ function Header(){
         <>
             <div className={styles.container}>
                 {! user ?(
-                    <Link to="/login">login</Link>
+                    <>
+                        <Link to="/login">login</Link>
+                    </>
                 ) : (
-                    <button onClick={handleLogout}>logout</button>
+                    <>
+                        <button onClick={handleLogout}>
+                            logout
+                        </button>
+                        <p>{user.username}</p>
+                    </>
                 )}
             </div>
         </>

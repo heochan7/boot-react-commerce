@@ -1,0 +1,12 @@
+package com.example.commerce_spring_api.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@AllArgsConstructor
+@Getter @Setter
+public class JoinResponse {
+    private boolean success;
+    private String message;
+}

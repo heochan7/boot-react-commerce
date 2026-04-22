@@ -1,11 +1,5 @@
 /* Join.module.css */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .wrapper {
   /* 화면 전체를 가로세로 꽉 채우고 중앙 정렬 */
   width: 100vw;

@@ -7,20 +7,13 @@ export const authApi = {
         return response.data;
     },
 
-    join: async (request: JoinRequest): Promise<JoinResponse> => {
-        try {
-            await api.post("/api/auth/join", request);
-            return { success: true };
-        } catch (err: any) {
-            return { 
-            success: false, 
-            message: err.response?.data?.message || "알 수 없는 오류가 발생했습니다." 
-            };
-        }
+     join: async (request: JoinRequest): Promise<JoinResponse> => {
+        const response = await api.post<JoinResponse>("/api//user/auth/join", request);
+        return response.data;
     },
     
     refresh: async(refreshToken: string): Promise<LoginResponse> =>{
-        const response = await api.post<LoginResponse>("/auth/refresh", {refreshToken});
+        const response = await api.post<LoginResponse>("/api/user/auth/refresh", {refreshToken});
         return response.data;
     },
 

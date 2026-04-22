@@ -38,7 +38,7 @@ public class JwtProvider {
         Date now = new Date();
         return Jwts.builder()
                 .subject(username)                 // 유저 식별값 (ID 등)
-                .claim("role", role)               // 권한 정보 추가 (예: ROLE_USER)
+                .claim("role", role.name())               // 권한 정보 추가 (예: ROLE_USER)
                 .issuer("board-application")       // 발행자 정보
                 .issuedAt(now)                     // 발행 시간
                 .expiration(new Date(now.getTime() + expiration)) // 만료 시간
@@ -71,9 +71,13 @@ public class JwtProvider {
         String username = claims.getSubject();
         String role = claims.get("role", String.class);
 
-        // 권한 문자열을 Spring Security가 이해할 수 있는 Authority 리스트로 변환
+        if (role == null) {
+            throw new JwtException("토큰에 권한 정보가 없습니다.");
+        }
+        String grantedRole = role.startsWith("ROLE_") ? role : "ROLE_" + role;
+
         List<SimpleGrantedAuthority> authorities =
-                Collections.singletonList(new SimpleGrantedAuthority(role));
+                Collections.singletonList(new SimpleGrantedAuthority(grantedRole));
 
         return new UsernamePasswordAuthenticationToken(username, null, authorities);
     }

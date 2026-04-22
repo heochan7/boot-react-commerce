@@ -60,15 +60,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const response = await authApi.login(request);
       
-      console.log(response);
+      console.log(response.user.username);
+      
+
       const { token, user } = response;
+      console.log(user.username);
+      
 
       setUser(user);
       setIsAuthenticated(true);
 
-
+      localStorage.setItem("accessToken", token);
       localStorage.setItem("user", JSON.stringify(user)); 
       
+      
+
     } catch (error) {
       console.error("Login failed in Context:", error);
       throw error; 
